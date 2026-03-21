@@ -1,0 +1,68 @@
+.page { min-height: 100vh; background: #f7f6f2; font-family: sans-serif; }
+
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px; background: #fff; border-bottom: 1px solid #e8e6e0;
+  position: sticky; top: 0; z-index: 10;
+}
+.backBtn { background: none; border: none; color: #888; font-size: 13px; cursor: pointer; padding: 6px 10px; border-radius: 6px; }
+.backBtn:hover { background: #f0eeea; color: #333; }
+.navCenter { display: flex; align-items: center; gap: 8px; }
+.brandMark { font-size: 20px; color: #1a6b3c; }
+.brandName { font-family: 'Georgia', serif; font-size: 17px; font-weight: 600; color: #1a1a1a; }
+.logoutBtn { background: none; border: 1px solid #ddd; border-radius: 6px; padding: 6px 14px; font-size: 13px; color: #555; cursor: pointer; }
+.logoutBtn:hover { background: #f0eeea; }
+
+.main { max-width: 600px; margin: 0 auto; padding: 40px 24px 80px; }
+
+.profileHeader {
+  display: flex; align-items: center; gap: 20px;
+  background: #fff; border: 1px solid #e8e6e0; border-radius: 16px;
+  padding: 28px; margin-bottom: 28px;
+}
+
+.avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: #e8f5e9; color: #1a6b3c;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 700; flex-shrink: 0;
+}
+
+.profileName { font-family: 'Georgia', serif; font-size: 22px; font-weight: 400; color: #1a1a1a; margin: 0 0 6px; }
+.profileMeta { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #888; }
+.dot { color: #ccc; }
+
+.roleBadge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; text-transform: capitalize; }
+.role_user { background: #e8f5e9; color: #1a6b3c; }
+.role_educator { background: #e3f2fd; color: #1565c0; }
+.role_admin { background: #fce4ec; color: #c2185b; }
+
+.tabs { display: flex; gap: 0; border-bottom: 1px solid #e8e6e0; margin-bottom: 24px; }
+.tab { background: none; border: none; padding: 10px 20px; font-size: 14px; color: #888; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; font-family: sans-serif; transition: color 0.15s; }
+.tab:hover { color: #333; }
+.activeTab { color: #1a1a1a; border-bottom-color: #1a6b3c; font-weight: 500; }
+.dangerTab:hover { color: #c0392b; }
+
+.successMsg { background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #1a6b3c; margin-bottom: 16px; }
+.errorMsg { background: #fff3f3; border: 1px solid #fcc; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #c33; margin-bottom: 16px; }
+
+.card { background: #fff; border: 1px solid #e8e6e0; border-radius: 12px; padding: 28px; }
+.cardTitle { font-family: 'Georgia', serif; font-size: 18px; font-weight: 400; color: #1a1a1a; margin: 0 0 20px; }
+
+.form { display: flex; flex-direction: column; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 12px; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.05em; }
+.input { border: 1px solid #ddd; border-radius: 8px; padding: 10px 12px; font-size: 14px; font-family: sans-serif; color: #1a1a1a; outline: none; background: #fafaf8; transition: border-color 0.15s; }
+.input:focus { border-color: #1a6b3c; background: #fff; }
+.input:disabled { opacity: 0.5; cursor: not-allowed; background: #f0eeea; }
+.hint { font-size: 11px; color: #bbb; }
+
+.saveBtn { background: #1a1a1a; color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: sans-serif; margin-top: 4px; transition: background 0.15s; }
+.saveBtn:hover:not(:disabled) { background: #333; }
+.saveBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.dangerCard { display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #fff3f3; border: 1px solid #fcc; border-radius: 10px; padding: 20px; }
+.dangerTitle { font-size: 14px; font-weight: 600; color: #c33; margin-bottom: 4px; }
+.dangerDesc { font-size: 13px; color: #888; line-height: 1.5; }
+.deleteBtn { background: #c0392b; color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; font-family: sans-serif; }
+.deleteBtn:hover { background: #a93226; }

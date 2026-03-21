@@ -1,0 +1,31 @@
+/* Add these CSS variables to your global.css file */
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f6f2;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666;
+  --text-muted: #aaa;
+  --border-color: #e8e6e0;
+  --nav-bg: #ffffff;
+  --input-bg: #fafaf8;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0d0d0b;
+  --bg-secondary: #141412;
+  --bg-card: #1a1a18;
+  --text-primary: #f0ede6;
+  --text-secondary: #888;
+  --text-muted: #555;
+  --border-color: rgba(255,255,255,0.08);
+  --nav-bg: rgba(13,13,11,0.9);
+  --input-bg: #1a1a18;
+}
+
+body {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background 0.2s, color 0.2s;
+}

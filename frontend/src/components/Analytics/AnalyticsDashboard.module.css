@@ -1,0 +1,53 @@
+.page { min-height: 100vh; background: #f7f6f2; font-family: sans-serif; }
+
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: #fff; border-bottom: 1px solid #e8e6e0; position: sticky; top: 0; z-index: 10; }
+.backBtn { background: none; border: none; color: #888; font-size: 13px; cursor: pointer; padding: 6px 10px; border-radius: 6px; }
+.backBtn:hover { background: #f0eeea; color: #333; }
+.navCenter { display: flex; align-items: center; gap: 8px; }
+.brandMark { font-size: 20px; color: #1a6b3c; }
+.brandName { font-family: 'Georgia', serif; font-size: 17px; font-weight: 600; color: #1a1a1a; }
+.exportBtn { background: #1a1a1a; color: #fff; border: none; border-radius: 7px; padding: 7px 16px; font-size: 13px; cursor: pointer; }
+.exportBtn:hover { background: #333; }
+
+.main { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+.pageHeader { margin-bottom: 28px; }
+.pageTitle { font-family: 'Georgia', serif; font-size: 28px; font-weight: 400; color: #1a1a1a; margin: 0 0 4px; }
+.pageSubtitle { font-size: 14px; color: #999; margin: 0; }
+
+.statsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+.statCard { background: #fff; border: 1px solid #e8e6e0; border-radius: 10px; padding: 20px; text-align: center; }
+.statVal { font-size: 32px; font-weight: 700; color: #1a1a1a; line-height: 1; margin-bottom: 6px; }
+.statLabel { font-size: 12px; color: #aaa; }
+
+.chartCard { background: #fff; border: 1px solid #e8e6e0; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.chartTitle { font-family: 'Georgia', serif; font-size: 18px; font-weight: 400; color: #1a1a1a; margin: 0 0 4px; }
+.chartSubtitle { font-size: 13px; color: #aaa; margin: 0 0 24px; }
+
+.noData { text-align: center; color: #ccc; padding: 40px; font-size: 14px; }
+
+/* Bar chart */
+.barChart { display: flex; align-items: flex-end; gap: 16px; height: 200px; padding-top: 20px; }
+.barGroup { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
+.barWrap { flex: 1; display: flex; align-items: flex-end; width: 100%; justify-content: center; }
+.bar { width: 100%; border-radius: 4px 4px 0 0; transition: height 0.4s ease; }
+.barCount { font-size: 12px; font-weight: 600; color: #333; }
+.barLabel { font-size: 11px; color: #aaa; }
+
+/* Timeline chart */
+.timelineChart { display: flex; flex-direction: column; gap: 12px; }
+.timelineItem { display: flex; flex-direction: column; gap: 4px; }
+.timelineBar { height: 8px; background: #f0eeea; border-radius: 4px; overflow: hidden; }
+.timelineFill { height: 100%; border-radius: 4px; transition: width 0.4s ease; }
+.timelineInfo { display: flex; justify-content: space-between; }
+.timelineTitle { font-size: 12px; color: #555; }
+.timelineScore { font-size: 12px; font-weight: 600; color: #333; }
+
+/* Verdict grid */
+.verdictGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.verdictCard { background: #f7f6f2; border-radius: 8px; padding: 16px; text-align: center; }
+.verdictCount { font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+.verdictLabel { font-size: 12px; color: #555; margin-bottom: 8px; }
+.verdictPct { font-size: 11px; color: #aaa; margin-bottom: 6px; }
+.verdictBar { height: 4px; background: #e8e6e0; border-radius: 2px; overflow: hidden; }
+.verdictBarFill { height: 100%; border-radius: 2px; transition: width 0.4s ease; }

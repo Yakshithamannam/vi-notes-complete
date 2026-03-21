@@ -1,0 +1,229 @@
+.page {
+  min-height: 100vh;
+  background: #f7f6f2;
+  font-family: sans-serif;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background: #fff;
+  border-bottom: 1px solid #e8e6e0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.brandMark { font-size: 22px; color: #1a6b3c; }
+.brandName {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.userName { font-size: 14px; color: #666; }
+
+.logoutBtn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+}
+.logoutBtn:hover { background: #f0eeea; }
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.pageTitle {
+  font-family: 'Georgia', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+}
+
+.newBtn {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.newBtn:hover { background: #333; }
+
+.empty {
+  text-align: center;
+  color: #aaa;
+  padding: 60px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 80px 24px;
+}
+.emptyIcon { font-size: 48px; color: #ccc; margin-bottom: 16px; }
+.emptyState h3 {
+  font-family: 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #444;
+  margin: 0 0 8px;
+}
+.emptyState p { color: #888; font-size: 14px; margin-bottom: 24px; }
+
+.sessionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.sessionCard {
+  background: #fff;
+  border: 1px solid #e8e6e0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.15s;
+}
+.sessionCard:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.statusBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.status_active { background: #e8f5e9; color: #2e7d32; }
+.status_completed { background: #e3f2fd; color: #1565c0; }
+.status_analyzed { background: #f3e5f5; color: #6a1b9a; }
+.status_archived { background: #f5f5f5; color: #757575; }
+
+.cardMeta {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.scoreRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f7f6f2;
+  border-radius: 8px;
+}
+
+.scoreCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.verdictLabel { font-size: 13px; font-weight: 600; }
+.verdictSub { font-size: 11px; color: #aaa; margin-top: 2px; }
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.actionBtn, .actionBtnPrimary, .deleteBtn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid;
+  text-align: center;
+}
+
+.actionBtn {
+  background: #fff;
+  border-color: #ddd;
+  color: #333;
+}
+.actionBtn:hover { background: #f0eeea; }
+
+.actionBtnPrimary {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #fff;
+}
+.actionBtnPrimary:hover { background: #333; }
+
+.deleteBtn {
+  background: #fff;
+  border-color: #fcc;
+  color: #c33;
+  flex: 0 0 auto;
+  padding: 8px 12px;
+}
+.deleteBtn:hover { background: #fff3f3; }
