@@ -31,6 +31,7 @@ export const authApi = {
     api.post('/auth/login', data),
   me: () => api.get('/auth/me'),
   updateMe: (data: { name?: string }) => api.patch('/auth/me', data),
+  googleLogin: (credential: string) => api.post('/auth/google', { credential }),
 };
 
 // ─── Sessions ─────────────────────────────────────────────────────────────────

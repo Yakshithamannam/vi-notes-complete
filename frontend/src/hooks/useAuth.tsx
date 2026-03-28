@@ -29,6 +29,7 @@ const reducer = (state: AuthState, action: AuthAction): AuthState => {
 interface AuthContextValue extends AuthState {
   login: (email: string, password: string) => Promise<void>;
   register: (name: string, email: string, password: string, role?: string) => Promise<void>;
+  loginWithGoogle: (credential: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -56,8 +57,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const { token, user } = res.data;
     localStorage.setItem('vi_token', token);
     dispatch({ type: 'SET_USER', payload: { user, token } });
-
-    // Redirect to saved page or dashboard
     const redirect = sessionStorage.getItem('redirectAfterLogin') || '/dashboard';
     sessionStorage.removeItem('redirectAfterLogin');
     window.location.href = redirect;
@@ -68,8 +67,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const { token, user } = res.data;
     localStorage.setItem('vi_token', token);
     dispatch({ type: 'SET_USER', payload: { user, token } });
+    const redirect = sessionStorage.getItem('redirectAfterLogin') || '/dashboard';
+    sessionStorage.removeItem('redirectAfterLogin');
+    window.location.href = redirect;
+  };
 
-    // Redirect to saved page or dashboard
+  const loginWithGoogle = async (credential: string) => {
+    const res = await authApi.googleLogin(credential);
+    const { token, user } = res.data;
+    localStorage.setItem('vi_token', token);
+    dispatch({ type: 'SET_USER', payload: { user, token } });
     const redirect = sessionStorage.getItem('redirectAfterLogin') || '/dashboard';
     sessionStorage.removeItem('redirectAfterLogin');
     window.location.href = redirect;
@@ -83,7 +90,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ ...state, login, register, logout }}>
+    <AuthContext.Provider value={{ ...state, login, register, loginWithGoogle, logout }}>
       {children}
     </AuthContext.Provider>
   );

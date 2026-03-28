@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import GoogleAuthButton from './GoogleAuthButton';
 import styles from './Auth.module.css';
 
 type Mode = 'login' | 'register';
@@ -55,6 +56,15 @@ const AuthPage: React.FC = () => {
           >
             Create account
           </button>
+        </div>
+
+        {/* Google Sign In Button */}
+        <GoogleAuthButton
+          onError={(msg) => setError(msg)}
+        />
+
+        <div className={styles.divider}>
+          <span className={styles.dividerText}>or continue with email</span>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -117,6 +127,12 @@ const AuthPage: React.FC = () => {
             {loading ? 'Please wait…' : mode === 'login' ? 'Sign in' : 'Create account'}
           </button>
         </form>
+
+        {mode === 'login' && (
+          <p className={styles.forgotLink}>
+            <a href="/forgot-password">Forgot password?</a>
+          </p>
+        )}
 
         <p className={styles.footer}>
           Authenticity verification powered by behavioral biometrics.

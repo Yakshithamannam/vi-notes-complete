@@ -27,19 +27,20 @@ const navItems = [
   { label: 'Forgot password', path: '/forgot-password' },
 ];
 
+// ← Only change: lighter, softer colors for light theme
 const exploreCards = [
-  { icon: '✎', label: 'Start writing', desc: 'Open the editor and start a monitored writing session', path: '/editor', color: 'rgba(74,222,128,0.1)', textColor: '#4ade80' },
-  { icon: '⊞', label: 'Dashboard', desc: 'View all your writing sessions and authenticity scores', path: '/dashboard', color: 'rgba(96,165,250,0.1)', textColor: '#60a5fa' },
-  { icon: '📊', label: 'Analytics', desc: 'View score trends, charts and writing statistics', path: '/analytics', color: 'rgba(251,191,36,0.1)', textColor: '#fbbf24' },
-  { icon: '🎓', label: 'Educator dashboard', desc: 'Review all student submissions and flag suspicious writing', path: '/educator', color: 'rgba(167,139,250,0.1)', textColor: '#a78bfa' },
-  { icon: '👤', label: 'Profile', desc: 'Edit your name, change password and manage your account', path: '/profile', color: 'rgba(52,211,153,0.1)', textColor: '#34d399' },
-  { icon: '📄', label: 'Authenticity reports', desc: 'View behavioral, textual scores with PDF export', path: '/dashboard', color: 'rgba(251,113,133,0.1)', textColor: '#fb7185' },
-  { icon: '🔑', label: 'Forgot password', desc: 'Reset your password via email verification link', path: '/forgot-password', color: 'rgba(234,179,8,0.1)', textColor: '#eab308' },
-  { icon: '🌙', label: 'Dark mode', desc: 'Toggle between light and dark theme', path: '/dashboard', color: 'rgba(148,163,184,0.1)', textColor: '#94a3b8' },
-  { icon: '📥', label: 'Export CSV', desc: 'Download all your session data as a spreadsheet', path: '/analytics', color: 'rgba(34,211,238,0.1)', textColor: '#22d3ee' },
-  { icon: '🔔', label: 'Notifications', desc: 'Get alerts for reports, paste detection and session updates', path: '/dashboard', color: 'rgba(74,222,128,0.1)', textColor: '#4ade80' },
-  { icon: '🤖', label: 'AI analysis', desc: 'OpenAI powered text analysis for higher accuracy detection', path: '/dashboard', color: 'rgba(167,139,250,0.1)', textColor: '#a78bfa' },
-  { icon: '👤', label: 'Create account', desc: 'Register as a writer or educator to get started', path: '/login', color: 'rgba(96,165,250,0.1)', textColor: '#60a5fa' },
+  { icon: '✎', label: 'Start writing', desc: 'Open the editor and start a monitored writing session', path: '/editor', color: 'rgba(45,158,95,0.08)', textColor: '#2d9e5f' },
+  { icon: '⊞', label: 'Dashboard', desc: 'View all your writing sessions and authenticity scores', path: '/dashboard', color: 'rgba(59,130,246,0.08)', textColor: '#3b82f6' },
+  { icon: '📊', label: 'Analytics', desc: 'View score trends, charts and writing statistics', path: '/analytics', color: 'rgba(234,179,8,0.08)', textColor: '#b45309' },
+  { icon: '🎓', label: 'Educator dashboard', desc: 'Review all student submissions and flag suspicious writing', path: '/educator', color: 'rgba(139,92,246,0.08)', textColor: '#7c3aed' },
+  { icon: '👤', label: 'Profile', desc: 'Edit your name, change password and manage your account', path: '/profile', color: 'rgba(16,185,129,0.08)', textColor: '#059669' },
+  { icon: '📄', label: 'Authenticity reports', desc: 'View behavioral, textual scores with PDF export', path: '/dashboard', color: 'rgba(239,68,68,0.08)', textColor: '#dc2626' },
+  { icon: '🔑', label: 'Forgot password', desc: 'Reset your password via email verification link', path: '/forgot-password', color: 'rgba(245,158,11,0.08)', textColor: '#d97706' },
+  { icon: '🌙', label: 'Dark mode', desc: 'Toggle between light and dark theme', path: '/dashboard', color: 'rgba(100,116,139,0.08)', textColor: '#475569' },
+  { icon: '📥', label: 'Export CSV', desc: 'Download all your session data as a spreadsheet', path: '/analytics', color: 'rgba(6,182,212,0.08)', textColor: '#0891b2' },
+  { icon: '🔔', label: 'Notifications', desc: 'Get alerts for reports, paste detection and session updates', path: '/dashboard', color: 'rgba(45,158,95,0.08)', textColor: '#2d9e5f' },
+  { icon: '🤖', label: 'AI analysis', desc: 'Groq Llama 3 powered text analysis for higher accuracy detection', path: '/dashboard', color: 'rgba(139,92,246,0.08)', textColor: '#7c3aed' },
+  { icon: '👤', label: 'Create account', desc: 'Register as a writer or educator to get started', path: '/login', color: 'rgba(59,130,246,0.08)', textColor: '#3b82f6' },
 ];
 
 const LandingPage: React.FC = () => {
@@ -189,8 +190,9 @@ const LandingPage: React.FC = () => {
           <div className={styles.previewScore}>
             <div className={styles.scoreRing}>
               <svg viewBox="0 0 60 60" className={styles.scoreRingSvg}>
-                <circle cx="30" cy="30" r="24" fill="none" stroke="#333" strokeWidth="4" />
-                <circle cx="30" cy="30" r="24" fill="none" stroke="#4ade80" strokeWidth="4"
+                {/* ← Changed: track circle lighter, fill circle uses soft green */}
+                <circle cx="30" cy="30" r="24" fill="none" stroke="#e5e7eb" strokeWidth="4" />
+                <circle cx="30" cy="30" r="24" fill="none" stroke="#2d9e5f" strokeWidth="4"
                   strokeDasharray="150.8" strokeDashoffset="45" strokeLinecap="round"
                   transform="rotate(-90 30 30)" />
               </svg>
