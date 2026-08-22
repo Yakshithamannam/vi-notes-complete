@@ -21,7 +21,9 @@ export const useWebSocket = ({ onFlag, enabled = true }: UseWebSocketOptions) =>
     const token = localStorage.getItem('vi_token');
     if (!token) return;
 
-    const wsUrl = `${import.meta.env.VITE_WS_URL || 'ws://localhost:5000'}/ws?token=${token}`;
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    const derivedWsUrl = `${apiUrl.replace(/^http/, 'ws').replace(/\/api\/?$/, '')}`;
+    const wsUrl = `${import.meta.env.VITE_WS_URL || derivedWsUrl}/ws?token=${token}`;
 
     try {
       const ws = new WebSocket(wsUrl);
