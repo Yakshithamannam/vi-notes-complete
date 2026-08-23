@@ -1,22 +1,15 @@
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const crypto = require('crypto');
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-   family: 4,
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const generateVerificationToken = () => crypto.randomBytes(32).toString('hex');
 
 const sendVerificationEmail = async (email, name, token) => {
   const verifyUrl = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/verify-email?token=${token}`;
 
-  await transporter.sendMail({
-    from: `"Vi-Notes" <${process.env.EMAIL_USER}>`,
+  await resend.emails.send({
+    from: 'Vi-Notes <onboarding@resend.dev>',
     to: email,
     subject: 'Verify your Vi-Notes account',
     html: `
@@ -42,8 +35,8 @@ const sendVerificationEmail = async (email, name, token) => {
 const sendPasswordResetEmail = async (email, name, token) => {
   const resetUrl = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/reset-password?token=${token}`;
 
-  await transporter.sendMail({
-    from: `"Vi-Notes" <${process.env.EMAIL_USER}>`,
+  await resend.emails.send({
+    from: 'Vi-Notes <onboarding@resend.dev>',
     to: email,
     subject: 'Reset your Vi-Notes password',
     html: `
